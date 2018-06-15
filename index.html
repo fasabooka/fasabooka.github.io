@@ -3,7 +3,7 @@
 <head>
 <style>
 body {
-  background-color: pink;
+  background-color: royalblue;
   margin: 0;
 }
 
@@ -14,8 +14,8 @@ body {
 
 .header {
   text-align: right;
-  background-color: magenta;
-  color: beige;
+  background-color: black;
+  color: lightblue;
 }
 
 .title {
@@ -48,8 +48,8 @@ body {
   border-width: 1px;
   border-color: black;
   padding: 6px;
-  color: white;
-  background-color: red;
+  color: #fff;
+  background-color: navy;
   font-weight: bold;
   font-size: 16px;
   margin-bottom: 8px;
@@ -79,6 +79,7 @@ body {
   margin-top: 8px;
 }
 
+
 </style>
 </head>
 <body>
@@ -86,38 +87,39 @@ body {
 <div class="container" onload="myFunction()">
 
   <div class="header">
-    <span class="txt">SEXY TIME</span>
+    <span class="txt">bleh</span>
   </div>
 
-  <div class="title">fuckbook</div>
+  <div class="title">facebook</div>
 
   <div class="login_box">
-    <input type="text" placeholder="penis length" class="username input">
+    <input type="text" placeholder="username" class="username input">
     <br> <br>
-    <input type="password" placeholder="harry's balls" class="password input">
+    <input type="password" placeholder="password" class="password input">
     <br> <br>
-    <input type="button" value="fuck in 5 minutes" class="button">
+    <input type="button" value="Log In" class="button">
     <div class="output">
       <p class="output_text">Login Successful!</p>
     </div>
   </div>
 
   <div>
-    <p class="link" onclick="prompt_email()">Forgot your viagra?</p>
+    <p class="link" onclick="prompt_email()">Forgot Password?</p>
   </div>
   <br> <br>
   <div>
-    <a href="https://www.google.com" class="link">FREE BLOWJOB</a>
+    <a href="https://www.google.com" class="link">Sign Up For Facebook</a>
   </div>
 
 
 </div>
 
 
+
 <script>
 var attempts = 0;
 
-/*onload = function updateTime() {
+onload = function updateTime() {
   var today = new Date();
   var h = today.getHours() - 12;
   var m = today.getMinutes();
@@ -127,7 +129,7 @@ var attempts = 0;
   var text = h + ":" + m + ":" + s + " pm";
   $(".txt").html(text);
   setTimeout(updateTime, 500);
-}*/
+}
 
 function fixTime(i) {
   if (i < 10) {
@@ -145,9 +147,9 @@ $(document).ready(function() {
       window.location = "https://www.facebook.com";
     } else {
       if (attempts == 3) {
-        $(".output").html("youve been sauced");
+        $(".output").html("Too many attempts.");
       } else {
-        $(".output").html("can't find men 4 u");
+        $(".output").html("Incorrect username or password.");
         attempts++;
       }
     }
@@ -165,6 +167,7 @@ function prompt_email() {
   document.getElementsByClassName("output")[0].style.display = "block";
   document.getElementsByClassName("output")[0].innerHTML = txt;
 }
+
 
 </script>
 
