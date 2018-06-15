@@ -1,28 +1,172 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Hank Quinlan, Horrible Cop</title>
-	</head>
-	<body>
-		<nav>
-    		<ul>
-        		<li><a href="/">Home</a></li>
-	        	<li><a href="/about">About</a></li>
-        		<li><a href="/cv">CV</a></li>
-        		<li><a href="/blog">Blog</a></li>
-    		</ul>
-		</nav>
-		<div class="container">
-    		<div class="blurb">
-        		<h1>Hi there, I'm Hank Quinlan!</h1>
-				<p>I'm best known as the horrible cop from <em>A Touch of Evil</em> Don't trust me. <a href="/about">Read more about my life...</a></p>
-    		</div><!-- /.blurb -->
-		</div><!-- /.container -->
-		<footer>
-    		<ul>
-        		<li><a href="mailto:hankquinlanhub@gmail.com">email</a></li>
-        		<li><a href="https://github.com/hankquinlan">github.com/hankquinlan</a></li>
-			</ul>
-		</footer>
-	</body>
+<head>
+<style>
+body {
+  background-color: pink;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+  color: #fff;
+}
+
+.header {
+  text-align: right;
+  background-color: magenta;
+  color: beige;
+}
+
+.title {
+  font-family: tahoma;
+  font-size: 38px;
+  font-weight: 600;
+  /*background-color: grey;*/
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.login_box {
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  /*background-color: #333;*/
+}
+
+.input {
+  width: 100%;
+  border-radius: 3px;
+  border-width: 1px;
+  padding: 6px;
+  font-family: verdana;
+}
+
+.button {
+  width: 103.5%;
+  border-radius: 3px;
+  border-width: 1px;
+  border-color: black;
+  padding: 6px;
+  color: white;
+  background-color: red;
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 8px;
+  font-family: verdana;
+  cursor: pointer;
+}
+
+.link {
+  color: #fff;
+  font-family: verdana;
+  font-size: 14px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.output {
+  display: none;
+  border-radius: 3px;
+  border-width: 1px;
+  padding: 6px;
+  font-family: verdana;
+  background-color: #C04644;
+  color: white;
+  font-weight: bold;
+  width: 100%;
+  margin-bottom: 8px;
+  margin-top: 8px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="container" onload="myFunction()">
+
+  <div class="header">
+    <span class="txt">SEXY TIME</span>
+  </div>
+
+  <div class="title">fuckbook</div>
+
+  <div class="login_box">
+    <input type="text" placeholder="penis length" class="username input">
+    <br> <br>
+    <input type="password" placeholder="harry's balls" class="password input">
+    <br> <br>
+    <input type="button" value="fuck in 5 minutes" class="button">
+    <div class="output">
+      <p class="output_text">Login Successful!</p>
+    </div>
+  </div>
+
+  <div>
+    <p class="link" onclick="prompt_email()">Forgot your viagra?</p>
+  </div>
+  <br> <br>
+  <div>
+    <a href="https://www.google.com" class="link">FREE BLOWJOB</a>
+  </div>
+
+
+</div>
+
+
+<script>
+var attempts = 0;
+
+/*onload = function updateTime() {
+  var today = new Date();
+  var h = today.getHours() - 12;
+  var m = today.getMinutes();
+  var s = today.getSeconds();
+  m = fixTime(m);
+  s = fixTime(s);
+  var text = h + ":" + m + ":" + s + " pm";
+  $(".txt").html(text);
+  setTimeout(updateTime, 500);
+}*/
+
+function fixTime(i) {
+  if (i < 10) {
+    i = "0" + i
+  } // add zero in front of numbers < 10
+  return i;
+}
+$(document).ready(function() {
+  $('.button').click(function(e) {
+    document.getElementsByClassName("output")[0].style.display = "block";
+    var attempted_username = $(".username").val();
+    var attempted_password = $(".password").val();
+
+    if (attempted_username == "user" && attempted_password == "pass") {
+      window.location = "https://www.facebook.com";
+    } else {
+      if (attempts == 3) {
+        $(".output").html("youve been sauced");
+      } else {
+        $(".output").html("can't find men 4 u");
+        attempts++;
+      }
+    }
+
+  });
+});
+
+function prompt_email() {
+  var txt = "Incorrect email.";
+  var email = prompt("Please enter your email:");
+  if (email == "user@js.com") {
+    txt = "Your password is 'pass'.";
+    attempts = 0;
+  }
+  document.getElementsByClassName("output")[0].style.display = "block";
+  document.getElementsByClassName("output")[0].innerHTML = txt;
+}
+
+</script>
+
+</body>
 </html>
